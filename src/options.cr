@@ -69,6 +69,7 @@ module Crul
 
         options.parser = OptionParser.parse(args) do |parser|
           parser.separator "HTTP options:"
+          parser.on("-d @file", "--data @file", "Request body (read from file)") { } # next handler
           parser.on("-d DATA", "--data DATA", "Request body") do |body|
             options.body = if body.starts_with?('@')
                              begin
@@ -81,7 +82,6 @@ module Crul
                              body
                            end
           end
-          parser.on("-d @file", "--data @file", "Request body (read from file)") { } # previous handler
           parser.on("-H HEADER", "--header HEADER", "Set header") do |header|
             name, value = header.split(':', 2)
             options.headers[name] = value

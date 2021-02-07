@@ -15,7 +15,7 @@ module Crul
       connect do |client|
         @options.cookie_store.add_to_headers(@host, @port, @options.headers)
 
-        response = client.exec(@options.method.to_s, @options.url.full_path, @options.headers, @options.body)
+        response = client.exec(@options.method.to_s, @options.url.request_target, @options.headers, @options.body)
 
         print_response response
 

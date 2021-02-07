@@ -1,5 +1,7 @@
 name: crul
-version: 0.4.2
+version: 0.4.3
+description: |
+  Curl replacement inspired by httpie
 
 dependencies:
   completion:
@@ -11,6 +13,14 @@ development_dependencies:
     github: manastech/webmock.cr
     branch: master
 
+crystal: ">= 0.36.1"
+
 license: MIT
+
 authors:
   - Sergio Gil <sgilperez@gmail.com>
+  - Jose Luis Salas <josacar@users.noreply.github.com>
+
+targets:
+  crul:
+    main: src/crul.cr
