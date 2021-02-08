@@ -1,16 +1,16 @@
-all: crul
+all: bin/crul
 
-crul: crul.cr src/**/*.cr
-	shards
-	crystal build --release --no-debug --static --link-flags "-lxml2 -llzma" crul.cr
-	@strip crul
-	@du -sh crul
+bin/crul: crul.cr src/**/*.cr
+	shards install
+	shards build --release --no-debug --static --link-flags "-lxml2 -llzma"
+	@strip bin/crul
+	@du -sh bin/crul
 
 clean:
 	rm -rf .crystal crul .deps .shards libs
 
 PREFIX ?= /usr/local
 
-install: crul
+install: bin/crul
 	install -d $(PREFIX)/bin
-	install crul $(PREFIX)/bin
+	install bin/crul $(PREFIX)/bin

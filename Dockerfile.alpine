@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.34.0-alpine
+FROM crystallang/crystal:0.36.1-alpine
 
 ADD crul.cr /src/
 ADD src /src/src

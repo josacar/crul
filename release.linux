@@ -18,7 +18,7 @@ docker run -v $PWD/build:/build -w /build crul.fpm \
     --input-type dir \
     --output-type deb \
     --name crul \
-    --version 0.4.1 \
+    --version 0.4.2 \
     --chdir /build \
     --package crul_VERSION_ARCH.deb \
     --license MIT \
